@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# GiveBack IITJ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **React-based donation portal** for the Indian Institute of Technology Jodhpur (IITJ). Built to facilitate alumni and supporter contributions with dedicated flows for donors in India, the USA, and other countries.
 
-## Available Scripts
+## What It Does
 
-In the project directory, you can run:
+GiveBack IITJ provides a clean, modern web interface for making donations to IIT Jodhpur. It supports multiple donation pathways, showcases impact statistics, features testimonials, and includes animated UI components for an engaging donor experience.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Feature | Description |
+|---------|-------------|
+| 🎠 **Impact Carousel** | Auto-rotating carousel highlighting donation impact stories |
+| 📊 **Animated Statistics** | Animated counters showing total donations, donors, projects funded |
+| 💳 **Multi-region Donation** | Separate flows for India, USA, and Rest of World |
+| 🏦 **Payment Methods** | Bank transfer, cheque/draft, and online options |
+| 🗣️ **Testimonials** | Alumni and donor voices with FAQ-style accordion |
+| 🃏 **Interactive Cards** | Hover-reveal cards with gradient animations |
+| 🎨 **Tailwind CSS** | Responsive, utility-first styling |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React 18** — UI framework
+- **React Router DOM** — Client-side routing
+- **Tailwind CSS** — Styling
+- **Framer Motion** — Scroll animations and entrance effects
+- **Lucide React** — Icons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+giveback/
+├── public/
+│   ├── assets/
+│   │   ├── card.jpg          # Card background image
+│   │   ├── globe.jpg         # Rest of world flag
+│   │   ├── india.png         # India flag
+│   │   └── usan.png          # USA flag
+│   └── index.html
+├── src/
+│   ├── App.js                # Router configuration
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Carousel.jsx      # Impact stories carousel
+│   │   ├── WhyGive.jsx       # Reasons to donate
+│   │   ├── StatsSection.jsx  # Animated donation counters
+│   │   ├── Card.jsx          # Interactive hover card
+│   │   ├── Donate.jsx        # Donation options (India/USA/Other)
+│   │   ├── IndiaDonate.jsx   # India-specific donation flow
+│   │   ├── OtherCountriesDonate.jsx
+│   │   ├── BankTransferForm.jsx
+│   │   ├── ChequeDraftForm.jsx
+│   │   ├── Testimonials.jsx  # Donor FAQ/Testimonials
+│   │   ├── Footer.jsx
+│   │   └── Card.jsx
+│   └── data/
+│       ├── carousel.js       # Carousel content data
+│       ├── stats.js          # Statistics numbers
+│       └── navItem.js        # Navigation items
+└── package.json
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Pages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page with carousel, stats, cards, testimonials |
+| `/donate` | Donation region selection (India / USA / Other) |
+| `/donate/in/Annual-Gift-Programme` | India donation form |
+| `/donate/oc/Annual-Gift-Programme` | Other countries donation form |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+```bash
+cd giveback
+npm install
+npm start
+# → http://localhost:3000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+# Deploy build/ folder to static hosting (Netlify, Vercel, GitHub Pages)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Design Highlights
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Red accent color** (`#910707`) — tied to IIT Jodhpur branding
+- **Smooth scroll animations** — Framer Motion `inView` triggers for counting stats
+- **Card hover states** — Gradient overlays and shadow transitions
+- **Responsive grid** — Cards and donation options stack on mobile
